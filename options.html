@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatGPT Thread Pruner 設定</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Arial; margin: 16px; }
+    .row { margin: 12px 0; }
+    label { display: inline-block; width: 220px; }
+    input[type="number"] { width: 90px; }
+    .hint { color: #666; font-size: 12px; margin-top: 6px; }
+    button { padding: 6px 10px; }
+  </style>
+</head>
+<body>
+  <h2>ChatGPT Thread Pruner</h2>
+
+  <div class="row">
+    <label>保留最近 assistant 回答數</label>
+    <input id="keep" type="number" min="5" max="200" />
+  </div>
+
+  <div class="row">
+    <label>Canvas 開啟時保留數</label>
+    <input id="canvasKeep" type="number" min="5" max="200" />
+    <div class="hint">Canvas 開啟通常更卡，建議設小一點（例如 12–25）。</div>
+  </div>
+
+  <div class="row">
+    <label>停用動畫/轉場</label>
+    <input id="disableAnimations" type="checkbox" />
+  </div>
+
+  <div class="row">
+    <label>Canvas 時更激進</label>
+    <input id="aggressiveWhenCanvas" type="checkbox" />
+  </div>
+
+  <div class="row">
+    <button id="save">儲存</button>
+    <span id="status" style="margin-left:10px;"></span>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

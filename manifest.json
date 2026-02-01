@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "chatgpt-dom-pruner",
+  "version": "0.1.0",
+  "description": "Collapses older assistant messages to reduce DOM and improve performance.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
